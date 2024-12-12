@@ -16,6 +16,7 @@ class TestJudge(unittest.TestCase):
             ("パー", "パー", "draw"),
         ]
         for computer_hand, player_hand, expected in patterns:
-            result = judge(computer_hand, player_hand)
-            self.assertEqual(result, expected)
+            with self.subTest(computer_hand=computer_hand, player_hand=player_hand):
+                result = judge(computer_hand, player_hand)
+                self.assertEqual(result, expected)
             
